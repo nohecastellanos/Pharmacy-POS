@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="331.0" prefWidth="563.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pos.pharmacy.signin.SigninCotroller">
+<AnchorPane id="AnchorPane" prefHeight="331.0" prefWidth="563.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="pos.pharmacy.sale.SaleController">
     <children>
-        <Button fx:id="btnlogin" layoutX="427.0" layoutY="227.0" onAction="#handleLoginAction" text="SignIn" />
+        <Button fx:id="btnlogin" layoutX="427.0" layoutY="227.0" onAction="" text="SignIn" />
         <Label fx:id="labellogin" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <TextField fx:id="txtusername" layoutX="230.0" layoutY="94.0" prefHeight="25.0" prefWidth="247.0" promptText="UserName" />
       <TextField  fx:id="txtpassword" layoutX="230.0" layoutY="146.0" prefHeight="25.0" prefWidth="247.0" promptText="Password" />

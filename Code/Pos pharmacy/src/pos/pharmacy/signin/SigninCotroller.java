@@ -5,33 +5,58 @@
  */
 package pos.pharmacy.signin;
 
-import java.net.URL;
+
+import java.io.IOException;
+
 import java.sql.SQLException;
-import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import pos.pharmacy.dbConnection.Connectdb;
+import javafx.scene.control.TextField;
 
+import javafx.stage.Stage;
+import pos.pharmacy.dbConnection.Connectdb;
 /**
  *
  * @author icom
  */
-public class SigninCotroller implements Initializable {
+public class SigninCotroller {
     
     @FXML
-    private Label label;
+    private Label labellogin;
     @FXML
-    private Button button;
+    private Button btnlogin;
+    @FXML
+    private TextField  txtusername;
+    @FXML
+    private TextField  txtpassword;
     
-    @FXML
-    private void handleButtonAction(ActionEvent event)throws SQLException {       
-        Connectdb cn = new Connectdb();
+    private String password;
+    private String username;
+    Connectdb cn = new Connectdb() ;
+    
+    public SigninCotroller() throws SQLException{
+        System.out.println("Constructor ");
         createRoleTable(cn);
         createUserTable(cn);
-        
+        createPermissionsTable(cn);
+    }
+    
+    
+   
+    @FXML
+    private void handleLoginAction(ActionEvent event)throws SQLException, IOException {       
+        username = txtusername.getText();
+        password = txtpassword.getText();
+        TreatSignin tr = new TreatSignin(password, username);
+        int done = tr.signIn(cn);
+         
+        if (done==1)
+        close();
+
     }
     
     public void createRoleTable(Connectdb  cn) throws SQLException{
@@ -54,9 +79,22 @@ public class SigninCotroller implements Initializable {
         cn.createTable("user", query);
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+      public void createPermissionsTable(Connectdb cn) throws SQLException{
+        String  query = "permission_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+                        +"role_id int ,"
+                        +"permission_name varchar(25) NOT NULL,"
+                        +"permission_description varchar(25),"
+                        +"foreign key(role_id) references role(role_id) ON DELETE CASCADE";
+                      
+        cn.createTable("permission", query);
+    }
+    
+      public void close(){
+        Stage stage = (Stage) btnlogin.getScene().getWindow();
+        // do what you have to do
+        stage.close();
+      
+      }
+  
     
 }

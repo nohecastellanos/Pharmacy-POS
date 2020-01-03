@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.pharmacy.medecines.MedecinesController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="170.0">
+         <children>
+            <Label prefHeight="39.0" prefWidth="170.0" text="Dashboard" />
+            <Label prefHeight="39.0" prefWidth="170.0" text="Medecines" />
+            <Label prefHeight="39.0" prefWidth="170.0" text="Other items" />
+            <Label prefHeight="39.0" prefWidth="170.0" text="Cashier" />
+            <Label prefHeight="39.0" prefWidth="170.0" text="Account" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -19,10 +19,8 @@ public class PosPharmacy extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("signin/signin.fxml"));
-        
-        Scene scene = new Scene(root);
-        
+        Parent root = FXMLLoader.load(getClass().getResource("signin/signin.fxml"));        
+        Scene scene = new Scene(root);        
         stage.setScene(scene);
         stage.show();
     }
