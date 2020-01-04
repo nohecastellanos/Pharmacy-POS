@@ -12,8 +12,8 @@ import  pos.pharmacy.dbConnection.Connectdb;
  */
 public class TreateDashboard {
     Connectdb cn;
-    public TreateDashboard(Connectdb cn){
-            cn = new Connectdb();
+    public TreateDashboard(){
+          
     }
     
     public void createItemTable(Connectdb  cn) throws SQLException{

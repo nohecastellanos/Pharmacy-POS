@@ -4,6 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.pharmacy.dashboard.DashboardController">
    <children>
@@ -14,6 +15,7 @@
                   <Button mnemonicParsing="false" onAction="#gotoDashboard" prefHeight="58.0" prefWidth="222.0" text="Dashboard" textOverrun="CLIP" />
                   <Button mnemonicParsing="false" onAction="#gotoMedecines" prefHeight="58.0" prefWidth="222.0" text="Medecines" />
                   <Button mnemonicParsing="false" onAction="#gotoOtherItems" prefHeight="58.0" prefWidth="222.0" text="Other items" />
+                  <Button mnemonicParsing="false" onAction="#gotoSale" prefHeight="58.0" prefWidth="222.0" text="Sales" />
                   <Button mnemonicParsing="false" onAction="#gotoSoonExpiring" prefHeight="58.0" prefWidth="222.0" text="Soon Expiring" />
                   <Button mnemonicParsing="false" onAction="#gotoSoonEnd" prefHeight="58.0" prefWidth="222.0" text="Soon End" />
                   <Button mnemonicParsing="false" onAction="#gotoAccount" prefHeight="58.0" prefWidth="222.0" text="Account" />
@@ -21,8 +23,8 @@
                </children>
             </VBox>
          </left>
-         <center>
-            
+         <center>            
+          <Label prefHeight="39.0" prefWidth="170.0" text="Welcome " />
          </center>
       </BorderPane>
    </children>
