@@ -8,11 +8,9 @@
    <children>
       <VBox prefHeight="500.0" prefWidth="170.0">
          <children>
-            <Label prefHeight="39.0" prefWidth="170.0" text="Dashboard" />
+           
             <Label prefHeight="39.0" prefWidth="170.0" text="Medecines" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Other items" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Cashier" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Account" />
+          
          </children>
       </VBox>
    </children>

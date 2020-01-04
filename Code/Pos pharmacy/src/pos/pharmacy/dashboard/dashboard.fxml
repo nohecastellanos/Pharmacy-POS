@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.pharmacy.dashboard.DashboardController">
    <children>
-      <VBox prefHeight="500.0" prefWidth="170.0">
-         <children>
-            <Label prefHeight="39.0" prefWidth="170.0" text="Dashboard" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Medecines" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Other items" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Cashier" />
-            <Label prefHeight="39.0" prefWidth="170.0" text="Account" />
-         </children>
-      </VBox>
+      <BorderPane id="borderpane" fx:id="borderpane" layoutY="-3.0" prefHeight="506.0" prefWidth="800.0">
+         <left>
+            <VBox prefHeight="506.0" prefWidth="222.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#gotoDashboard" prefHeight="58.0" prefWidth="222.0" text="Dashboard" textOverrun="CLIP" />
+                  <Button mnemonicParsing="false" onAction="#gotoMedecines" prefHeight="58.0" prefWidth="222.0" text="Medecines" />
+                  <Button mnemonicParsing="false" onAction="#gotoOtherItems" prefHeight="58.0" prefWidth="222.0" text="Other items" />
+                  <Button mnemonicParsing="false" onAction="#gotoSoonExpiring" prefHeight="58.0" prefWidth="222.0" text="Soon Expiring" />
+                  <Button mnemonicParsing="false" onAction="#gotoSoonEnd" prefHeight="58.0" prefWidth="222.0" text="Soon End" />
+                  <Button mnemonicParsing="false" onAction="#gotoAccount" prefHeight="58.0" prefWidth="222.0" text="Account" />
+                  <Button mnemonicParsing="false" onAction="#gotoCashier" prefHeight="58.0" prefWidth="222.0" text="Cashier" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
