@@ -39,6 +39,7 @@ public class SigninCotroller {
     Connectdb cn = new Connectdb() ;
     
     public SigninCotroller() throws SQLException{
+        cn.createDb();
         System.out.println("Constructor ");
         createRoleTable(cn);
         createUserTable(cn);
