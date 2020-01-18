@@ -14,7 +14,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import javafx.stage.Stage;
@@ -32,7 +34,11 @@ public class SigninCotroller {
     @FXML
     private TextField  txtusername;
     @FXML
-    private TextField  txtpassword;
+    private PasswordField  txtpassword;
+    @FXML
+    private TextField txtpasswordvisible;
+    @FXML
+    private CheckBox showpasswordbox;
     
     private String password;
     private String username;
@@ -40,24 +46,43 @@ public class SigninCotroller {
     
     public SigninCotroller() throws SQLException{
         cn.createDb();
-        System.out.println("Constructor ");
+        
         createRoleTable(cn);
         createUserTable(cn);
         createPermissionsTable(cn);
     }
     
+     @FXML
+    void handleHidePassword(ActionEvent event) {
+        if (showpasswordbox.isSelected()) {
+            txtpasswordvisible.setText(txtpassword.getText());
+            txtpasswordvisible.setVisible(true);
+            txtpassword.setVisible(false);
+           
+            return;
+        }
+            txtpassword.setText(txtpasswordvisible.getText());
+            txtpassword.setVisible(true);
+            txtpasswordvisible.setVisible(false);
+}
     
    
     @FXML
     private void handleLoginAction(ActionEvent event)throws SQLException, IOException {       
         username = txtusername.getText();
-        password = txtpassword.getText();
+        password = txtpassword.getText().length() > txtpasswordvisible.getText().length()  ?  txtpassword.getText() :txtpasswordvisible.getText() ;
+       
         TreatSignin tr = new TreatSignin(password, username);
         int done = tr.signIn(cn);
          
         if (done==1)
         close();
 
+    }
+    
+    @FXML
+    public void initialize() throws SQLException {
+       handleHidePassword(null);
     }
     
     public void createRoleTable(Connectdb  cn) throws SQLException{

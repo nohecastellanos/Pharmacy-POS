@@ -33,11 +33,10 @@ public class DashboardController {
     public DashboardController() throws SQLException, IOException{
        cn =  new Connectdb();
        tds = new TreateDashboard();
+       tds.createTypeTable(cn);
        tds.createItemTable(cn);
        tds.createMedecinesTable(cn);
-       tds.createOthersTable(cn);
-      
-
+       tds.createOthersTable(cn);     
     }
     
     @FXML

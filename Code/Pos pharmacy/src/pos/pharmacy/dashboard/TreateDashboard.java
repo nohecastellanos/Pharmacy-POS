@@ -15,15 +15,27 @@ public class TreateDashboard {
     public TreateDashboard(){
           
     }
+     public void createTypeTable(Connectdb  cn) throws SQLException{
+     String  query  =  "type_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+                       +"type_name varchar(50) NOT NULL unique,"
+                       + "create_at datetime not null,"
+                       + "modify_at datetime not null";
+      cn.createTable("type", query);
+    }
+    
     
     public void createItemTable(Connectdb  cn) throws SQLException{
      String  query  = "item_id  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
-                    +"item_name varchar(25) NOT NULL UNIQUE,"
-                    +"item_price float not null,"
-                    + "item_qt integer not null,"
-                    + "notify_qt integer not null,"
-                    + "create_at datetime not null,"
-                    + "modify_at datetime not null";
+                        +"type_id INT NOT NULL,"                         
+                        +"item_key varchar(25) NOT NULL UNIQUE,"
+                        +"item_name varchar(25) NOT NULL UNIQUE,"                                   
+                        +"item_price float not null,"
+                        + "tax float not null,"
+                        + "item_qt integer not null,"
+                        + "notify_qt integer not null,"
+                        + "create_at datetime not null,"
+                        + "modify_at datetime not null,"
+      + "foreign key(type_id) references type(type_id) ON DELETE CASCADE";
       cn.createTable("item", query);
     }
     
